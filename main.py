@@ -1,7 +1,8 @@
 from display import *
-from process import *
+from scheduling import *
 from condition import *
 
+# Fonction pour lire le tableau des contraintes à partir d'un fichier
 def read_automata(file_name):
     tasks = {0: {'duration': 0, 'predecessors': []}}  # Add node 0 with no predecessors and no duration
     arcs_number = 0
@@ -43,8 +44,10 @@ def read_automata(file_name):
 
     return tasks, arcs_number
 
+
+# Fonction de test
 """
-tasks, arcs_number = read_automata(f"Diaries/5.txt")
+tasks, arcs_number = read_automata(f"Tables/table 5.txt")
 
 display_automata(tasks, arcs_number)
 
@@ -72,9 +75,10 @@ slack = calculate_slack(earliest_start, latest_start)
 print("\nMarges (Slack) :")
 for task in tasks:
     print(f"Tâche {task} : Marge = {slack[task]}")
-
-
 """
+
+
+##############################################      MAIN      ################################################################
 def main():
     print("\n----- ORDONNANCEMENT -----")
     while True:
@@ -90,14 +94,14 @@ def main():
         slack = {}
         critical_path = []     
         
-        user_input = input("Entrez le numero du fichier de contraintes (entre 1 et 6) : ")
+        user_input = input("Entrez le numero du fichier de contraintes (entre 1 et 14) : ")
         
         try:
             # Essayer de convertir l'entrée en un entier
             number = int(user_input)
             
             # Regarde si le nombre est dans la plage autorisée
-            if number < 1 or number > 6:
+            if number < 1 or number > 14:
                 print("\nVeuillez entrer un nombre valide.")  # Hors de la plage autorisée
                 continue
         
@@ -106,7 +110,7 @@ def main():
             print("\nEntrée invalide. Veuillez entrer un nombre valide.")
             continue
         
-        file_name = f"Diaries/{number}.txt"
+        file_name = f"Tables/table {number}.txt"
 
         # Étape 1 : Lire le tableau des contraintes à partir du fichier
         tasks, arcs_number = read_automata(file_name)
@@ -153,3 +157,11 @@ def main():
 if __name__ == "__main__":
     main()
 
+##################################################################################################################################
+
+"""tasks, arcs_number = read_automata(f"Tables/table 6.txt")
+
+display_automata(tasks, arcs_number)
+
+print("\nReprésentation du Graphe (Matrice) :\n")
+create_matrix(tasks)"""
