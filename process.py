@@ -41,7 +41,7 @@ def calculate_slack(earliest_start, latest_start):
 
 
 def display_slack(slack):
-    print("\nMarges (Slacks) pour chaque tâche:")
+    print("\n* Marges (Slacks) pour chaque tâche:")
     for task, sl in slack.items():
         print(f"Tâche {task}: Marge = {sl}")
 
@@ -53,7 +53,7 @@ def find_critical_path(slack):
 
 
 def display_critical_path(tasks, critical_path):
-    print("\nChemin(s) critique(s):")
+    print("\n* Chemin(s) critique(s):")
     # Créer une chaîne de tâches dans l'ordre du chemin critique
-    path_sequence = " → ".join(f"Tâche {task}" for task in critical_path)
+    path_sequence = " -> ".join(f"Tâche {task}" for task in critical_path)
     print(path_sequence)

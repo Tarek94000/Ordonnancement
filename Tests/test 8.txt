@@ -1,0 +1,148 @@
+* Creation du graphe d'ordonnancement :
+12 sommets
+18 arcs
+0 -> 4 = 0
+0 -> 5 = 0
+0 -> 6 = 0
+0 -> 7 = 0
+0 -> 10 = 0
+1 -> 9 = 1
+2 -> 9 = 2
+3 -> 9 = 3
+4 -> 1 = 4
+5 -> 1 = 5
+5 -> 8 = 5
+6 -> 3 = 6
+7 -> 2 = 7
+7 -> 8 = 7
+8 -> 9 = 9
+9 -> 11 = 9
+10 -> 1 = 10
+10 -> 3 = 10
+
+
+* Représentation du Graphe (Matrice) :
+
+    0   0   1   2   3   4   5   6   7   8   9  10  11
+0   *   *   *   *   *   0   0   0   0   *   *   0   *
+1   *   *   *   *   *   *   *   *   *   *   1   *   *
+2   *   *   *   *   *   *   *   *   *   *   2   *   *
+3   *   *   *   *   *   *   *   *   *   *   3   *   *
+4   *   *   4   *   *   *   *   *   *   *   *   *   *
+5   *   *   5   *   *   *   *   *   *   5   *   *   *
+6   *   *   *   *   6   *   *   *   *   *   *   *   *
+7   *   *   *   7   *   *   *   *   *   7   *   *   *
+8   *   *   *   *   *   *   *   *   *   *   9   *   *
+9   *   *   *   *   *   *   *   *   *   *   *   *   9
+10  *   *  10   *  10   *   *   *   *   *   *   *   *
+11  *   *   *   *   *   *   *   *   *   *   *   *   *
+
+
+Il y a un seul point d’entrée, 0
+Il y a un seul point de sortie, 11
+
+* Détection de circuit:
+
+Points d’entrée : 0
+Suppression des points d’entrée : 0
+Sommets restant : 1 2 3 4 5 6 7 8 9 10 11
+
+Points d’entrée : 4 5 6 7 10
+Suppression des points d’entrée : 4
+Sommets restant : 1 2 3 5 6 7 8 9 10 11
+
+Points d’entrée : 5 6 7 10
+Suppression des points d’entrée : 5
+Sommets restant : 1 2 3 6 7 8 9 10 11
+
+Points d’entrée : 6 7 10
+Suppression des points d’entrée : 6
+Sommets restant : 1 2 3 7 8 9 10 11
+
+Points d’entrée : 7 10
+Suppression des points d’entrée : 7
+Sommets restant : 1 2 3 8 9 10 11
+
+Points d’entrée : 10 2 8
+Suppression des points d’entrée : 10
+Sommets restant : 1 2 3 8 9 11
+
+Points d’entrée : 2 8 1 3
+Suppression des points d’entrée : 2
+Sommets restant : 1 3 8 9 11
+
+Points d’entrée : 8 1 3
+Suppression des points d’entrée : 8
+Sommets restant : 1 3 9 11
+
+Points d’entrée : 1 3
+Suppression des points d’entrée : 1
+Sommets restant : 3 9 11
+
+Points d’entrée : 3
+Suppression des points d’entrée : 3
+Sommets restant : 9 11
+
+Points d’entrée : 9
+Suppression des points d’entrée : 9
+Sommets restant : 11
+
+Points d’entrée : 11
+Suppression des points d’entrée : 11
+Sommets restant : Aucun
+
+-> Il n’y a pas de circuit.
+-> Il n’y a pas d’arcs négatifs
+-> C’est un graphe d’ordonnancement.
+
+
+Graphe d'ordonnancement valide. Poursuite des calculs...
+
+
+Temps au plus tôt (EST) et au plus tard (EFT) :
+Tâche 0 : EST = 0, EFT = 0
+Tâche 1 : EST = 10, EFT = 11
+Tâche 2 : EST = 7, EFT = 9
+Tâche 3 : EST = 10, EFT = 13
+Tâche 4 : EST = 0, EFT = 4
+Tâche 5 : EST = 0, EFT = 5
+Tâche 6 : EST = 0, EFT = 6
+Tâche 7 : EST = 0, EFT = 7
+Tâche 8 : EST = 7, EFT = 16
+Tâche 9 : EST = 16, EFT = 25
+Tâche 10 : EST = 0, EFT = 10
+Tâche 11 : EST = 25, EFT = 25
+
+Temps au plus tard (LST) et au plus tard (LFT) :
+Tâche 0 : LST = 0, LFT = 0
+Tâche 1 : LST = 15, LFT = 16
+Tâche 2 : LST = 14, LFT = 16
+Tâche 3 : LST = 13, LFT = 16
+Tâche 4 : LST = 11, LFT = 15
+Tâche 5 : LST = 2, LFT = 7
+Tâche 6 : LST = 7, LFT = 13
+Tâche 7 : LST = 0, LFT = 7
+Tâche 8 : LST = 7, LFT = 16
+Tâche 9 : LST = 16, LFT = 25
+Tâche 10 : LST = 3, LFT = 13
+Tâche 11 : LST = 25, LFT = 25
+
+Marges (Slack) :
+Tâche 0 : Marge = 0
+Tâche 1 : Marge = 5
+Tâche 2 : Marge = 7
+Tâche 3 : Marge = 3
+Tâche 4 : Marge = 11
+Tâche 5 : Marge = 2
+Tâche 6 : Marge = 7
+Tâche 7 : Marge = 0
+Tâche 8 : Marge = 0
+Tâche 9 : Marge = 0
+Tâche 10 : Marge = 3
+Tâche 11 : Marge = 0
+
+* Chemin(s) critique(s):
+Tâche 0 -> Tâche 7 -> Tâche 8 -> Tâche 9 -> Tâche 11
+
+----- Fin de l'ordonnancement pour ce tableau -----
+

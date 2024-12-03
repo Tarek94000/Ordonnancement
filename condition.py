@@ -17,7 +17,7 @@ def verifiying_ord_graph(tasks):
     topological_order = []
     print("\nIl y a un seul point d’entrée, 0")
     print(f"Il y a un seul point de sortie, {max(tasks.keys())}\n")
-    print("Détection de circuit:\n")
+    print("* Détection de circuit:\n")
     
     while queue:
         # Imprimer les points d'entrée actuels
@@ -50,7 +50,7 @@ def verifiying_ord_graph(tasks):
         return None, False  # Indique qu'un cycle a été détecté
     else:
         print("-> Il n’y a pas de circuit.")
-        print("Il n’y a pas d’arcs négatifs")
+        print("-> Il n’y a pas d’arcs négatifs")
         print("-> C’est un graphe d’ordonnancement.\n")
         return topological_order, True  # Aucun cycle détecté
 
