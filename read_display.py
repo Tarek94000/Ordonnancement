@@ -1,6 +1,6 @@
 # Fonction pour lire le tableau des contraintes à partir d'un fichier
 def read_automata(file_name):
-    tasks = {0: {'duration': 0, 'predecessors': []}}  # Add node 0 with no predecessors and no duration
+    tasks = {0: {'duration': 0, 'predecessors': []}}  # Ajoute le noeud 0 fictif
     arcs_number = 0
 
     with open(file_name, 'r') as file:
@@ -15,7 +15,7 @@ def read_automata(file_name):
                 predecessors = list(map(int, parts[2:]))
                 arcs_number += len(predecessors)
             else:
-                predecessors = [0]  # Connect to fictitious start node
+                predecessors = [0]  # Relie la tâche à la tâche 0 fictive
                 arcs_number += 1
                 
             tasks[task_num] = {
@@ -23,16 +23,16 @@ def read_automata(file_name):
                 'predecessors': predecessors
             }
 
-    # Find tasks with no successors
+    # Trouve les noeuds terminaux (ceux sans successeurs)
     all_tasks = set(tasks.keys())
     tasks_with_successors = set()
     
     for task_info in tasks.values():
         tasks_with_successors.update(task_info['predecessors'])
 
-    terminal_tasks = all_tasks - tasks_with_successors  # These are the tasks with no successors
+    terminal_tasks = all_tasks - tasks_with_successors
 
-    # Add a fictitious end node (end_node = N + 1 where N is the number of real tasks)
+    # Ajoute un noeud fictif de fin pour les tâches terminales
     end_node = len(tasks)
     tasks[end_node] = {'duration': 0, 'predecessors': list(terminal_tasks)}  # End node
 
@@ -57,7 +57,7 @@ def display_automata(tasks, arcs_number):
 
 def create_matrix(tasks):
     # Affiche l'en-tête de la matrice
-    print("    0", end="")
+    print("  ", end="")
     for task in tasks:
         if task < 10:
             print(" ", end="")
@@ -68,9 +68,9 @@ def create_matrix(tasks):
     for task in range(len(tasks)):
         # Si la tâche fait plus de 9, on ajuste l'espacement pour l'affichage
         if task > 9:
-            print(task, " *", end="")
+            print(task, end="")
         else:
-            print(task, "  *", end="")
+            print(task, "", end="")
         
         # Vérifie si la tâche actuelle est un prédécesseur de task2
         for task2 in tasks:
@@ -94,4 +94,14 @@ def create_matrix(tasks):
                     print("   *", end="")
         print()
     print()
-
+    
+    
+def display_critical_path(critical_path):
+    print("\n* Tâches critiques:")
+    # Créer une chaîne de tâches dans l'ordre du chemin critique
+    for task in critical_path:
+        print(f"Tâche {task}", end="")
+        
+        if task != critical_path[-1]:
+            print(", ", end="")
+    print()

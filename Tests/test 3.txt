@@ -27,21 +27,21 @@
 
 * Représentation du Graphe (Matrice) :
 
-    0   0   1   2   3   4   5   6   7   8   9  10  11  12  13
-0   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *
-1   *   *   *   *   2   *   *   *   *   *   *   *   *   *   *
-2   *   *   *   *   5   5   *   *   *   *   *   *   *   *   *
-3   *   *   *   *   *   *   *   *   *   *   *   *   *   4   *
-4   *   *   *   *   2   *   2   *   *   2   *   *   2   *   *
-5   *   *   *   *   *   *   *   5   *   *   5   *   *   *   *
-6   *   *   *   *   *   *   *   *   5   5   5   *   *   *   *
-7   *   *   *   *   *   *   *   *   *   9   9   *   *   *   *
-8   *   *   *   *   *   *   *   *   *   *   *   *   *   *   1
-9   *   *   *   *   *   *   *   *   *   *   *   *   *   *   5
-10  *   *   *   *   *   *   *   *   *   *   *   *   *   *   9
-11  *   *   *   *   *   *   *   *   *   *   *   1   *   *   *
-12  *   *   *   *   *   *   *   *   *   1   *   *   *   *   *
-13  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
+     0   1   2   3   4   5   6   7   8   9  10  11  12  13
+0    *   0   0   *   *   *   *   *   *   *   *   *   *   *
+1    *   *   *   2   *   *   *   *   *   *   *   *   *   *
+2    *   *   *   5   5   *   *   *   *   *   *   *   *   *
+3    *   *   *   *   *   *   *   *   *   *   *   *   4   *
+4    *   *   *   2   *   2   *   *   2   *   *   2   *   *
+5    *   *   *   *   *   *   5   *   *   5   *   *   *   *
+6    *   *   *   *   *   *   *   5   5   5   *   *   *   *
+7    *   *   *   *   *   *   *   *   9   9   *   *   *   *
+8    *   *   *   *   *   *   *   *   *   *   *   *   *   1
+9    *   *   *   *   *   *   *   *   *   *   *   *   *   5
+10   *   *   *   *   *   *   *   *   *   *   *   *   *   9
+11   *   *   *   *   *   *   *   *   *   *   1   *   *   *
+12   *   *   *   *   *   *   *   *   1   *   *   *   *   *
+13   *   *   *   *   *   *   *   *   *   *   *   *   *   *
 
 
 Il y a un seul point d’entrée, 0
@@ -113,39 +113,39 @@ Sommets restant : Aucun
 Graphe d'ordonnancement valide. Poursuite des calculs...
 
 
-Temps au plus tôt (EST) et au plus tard (EFT) :
-Tâche 0 : EST = 0, EFT = 0
-Tâche 1 : EST = 0, EFT = 2
-Tâche 2 : EST = 0, EFT = 5
-Tâche 3 : EST = 7, EFT = 11
-Tâche 4 : EST = 5, EFT = 7
-Tâche 5 : EST = 7, EFT = 12
-Tâche 6 : EST = 12, EFT = 17
-Tâche 7 : EST = 17, EFT = 26
-Tâche 8 : EST = 26, EFT = 27
-Tâche 9 : EST = 26, EFT = 31
-Tâche 10 : EST = 8, EFT = 17
-Tâche 11 : EST = 7, EFT = 8
-Tâche 12 : EST = 11, EFT = 12
-Tâche 13 : EST = 31, EFT = 31
+* Rangs :
+Tâche 0 : rang = 0
+Tâche 1 : rang = 1
+Tâche 2 : rang = 1
+Tâche 3 : rang = 3
+Tâche 4 : rang = 2
+Tâche 5 : rang = 3
+Tâche 6 : rang = 4
+Tâche 7 : rang = 5
+Tâche 8 : rang = 6
+Tâche 9 : rang = 6
+Tâche 10 : rang = 4
+Tâche 11 : rang = 3
+Tâche 12 : rang = 4
+Tâche 13 : rang = 7
 
-Temps au plus tard (LST) et au plus tard (LFT) :
-Tâche 0 : LST = 0, LFT = 0
-Tâche 1 : LST = 23, LFT = 25
-Tâche 2 : LST = 0, LFT = 5
-Tâche 3 : LST = 25, LFT = 29
-Tâche 4 : LST = 5, LFT = 7
-Tâche 5 : LST = 7, LFT = 12
-Tâche 6 : LST = 12, LFT = 17
-Tâche 7 : LST = 17, LFT = 26
-Tâche 8 : LST = 30, LFT = 31
-Tâche 9 : LST = 26, LFT = 31
-Tâche 10 : LST = 22, LFT = 31
-Tâche 11 : LST = 21, LFT = 22
-Tâche 12 : LST = 29, LFT = 30
-Tâche 13 : LST = 31, LFT = 31
+* Temps au plus tôt (EST) et au plus tard (LST) :
+Tâche 0 : EST = 0, LST = 0
+Tâche 1 : EST = 0, LST = 23
+Tâche 2 : EST = 0, LST = 0
+Tâche 3 : EST = 7, LST = 25
+Tâche 4 : EST = 5, LST = 5
+Tâche 5 : EST = 7, LST = 7
+Tâche 6 : EST = 12, LST = 12
+Tâche 7 : EST = 17, LST = 17
+Tâche 8 : EST = 26, LST = 30
+Tâche 9 : EST = 26, LST = 26
+Tâche 10 : EST = 8, LST = 22
+Tâche 11 : EST = 7, LST = 21
+Tâche 12 : EST = 11, LST = 29
+Tâche 13 : EST = 31, LST = 31
 
-Marges (Slack) :
+* Marges :
 Tâche 0 : Marge = 0
 Tâche 1 : Marge = 23
 Tâche 2 : Marge = 0
@@ -160,9 +160,8 @@ Tâche 10 : Marge = 14
 Tâche 11 : Marge = 14
 Tâche 12 : Marge = 18
 Tâche 13 : Marge = 0
-
-* Chemin(s) critique(s):
-Tâche 0 -> Tâche 2 -> Tâche 4 -> Tâche 5 -> Tâche 6 -> Tâche 7 -> Tâche 9 -> Tâche 13
+Chemins critiques:
+0 -> 2 -> 4 -> 5 -> 6 -> 7 -> 9 -> 13 
 
 ----- Fin de l'ordonnancement pour ce tableau -----
 

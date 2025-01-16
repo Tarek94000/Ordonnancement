@@ -12,13 +12,13 @@
 
 * Représentation du Graphe (Matrice) :
 
-    0   0   1   2   3   4   5
-0   *   *   0   *   0   *   *
-1   *   *   *   9   *   *   *
-2   *   *   *   *   *   *   2
-3   *   *   *   4   *   4   *
-4   *   *   *   *   *   *   7
-5   *   *   *   *   *   *   *
+     0   1   2   3   4   5
+0    *   0   *   0   *   *
+1    *   *   9   *   *   *
+2    *   *   *   *   *   2
+3    *   *   4   *   4   *
+4    *   *   *   *   *   7
+5    *   *   *   *   *   *
 
 
 Il y a un seul point d’entrée, 0
@@ -58,32 +58,32 @@ Sommets restant : Aucun
 Graphe d'ordonnancement valide. Poursuite des calculs...
 
 
-Temps au plus tôt (EST) et au plus tard (EFT) :
-Tâche 0 : EST = 0, EFT = 0
-Tâche 1 : EST = 0, EFT = 9
-Tâche 2 : EST = 9, EFT = 11
-Tâche 3 : EST = 0, EFT = 4
-Tâche 4 : EST = 4, EFT = 11
-Tâche 5 : EST = 11, EFT = 11
+* Rangs :
+Tâche 0 : rang = 0
+Tâche 1 : rang = 1
+Tâche 2 : rang = 2
+Tâche 3 : rang = 1
+Tâche 4 : rang = 2
+Tâche 5 : rang = 3
 
-Temps au plus tard (LST) et au plus tard (LFT) :
-Tâche 0 : LST = 0, LFT = 0
-Tâche 1 : LST = 0, LFT = 9
-Tâche 2 : LST = 9, LFT = 11
-Tâche 3 : LST = 0, LFT = 4
-Tâche 4 : LST = 4, LFT = 11
-Tâche 5 : LST = 11, LFT = 11
+* Temps au plus tôt (EST) et au plus tard (LST) :
+Tâche 0 : EST = 0, LST = 0
+Tâche 1 : EST = 0, LST = 0
+Tâche 2 : EST = 9, LST = 9
+Tâche 3 : EST = 0, LST = 0
+Tâche 4 : EST = 4, LST = 4
+Tâche 5 : EST = 11, LST = 11
 
-Marges (Slack) :
+* Marges :
 Tâche 0 : Marge = 0
 Tâche 1 : Marge = 0
 Tâche 2 : Marge = 0
 Tâche 3 : Marge = 0
 Tâche 4 : Marge = 0
 Tâche 5 : Marge = 0
-
-* Chemin(s) critique(s):
-Tâche 0 -> Tâche 1 -> Tâche 2 -> Tâche 3 -> Tâche 4 -> Tâche 5
+Chemins critiques:
+0 -> 1 -> 2 -> 5 
+0 -> 3 -> 4 -> 5 
 
 ----- Fin de l'ordonnancement pour ce tableau -----
 

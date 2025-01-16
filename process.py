@@ -31,7 +31,7 @@ def calculate_latest_times(tasks, top_order, earliest_finish):
             latest_finish[predecessor] = min(latest_finish[predecessor], latest_start[task])
             latest_start[predecessor] = latest_finish[predecessor] - tasks[predecessor]['duration']
     
-    return latest_start, latest_finish
+    return latest_start
 
 
 def calculate_slack(earliest_start, latest_start):
@@ -40,20 +40,64 @@ def calculate_slack(earliest_start, latest_start):
     return slack
 
 
-def display_slack(slack):
-    print("\n* Marges (Slacks) pour chaque tâche:")
-    for task, sl in slack.items():
-        print(f"Tâche {task}: Marge = {sl}")
+def calculate_task_ranks(tasks):
+    ranks = {}
+    
+    # Fonction récursive pour calculer le rang
+    def compute_rank(task_id):
+        if task_id in ranks:
+            return ranks[task_id]  # Déjà calculé
+        if not tasks[task_id]['predecessors']:
+            ranks[task_id] = 0  # Pas de prédécesseur -> rang 0
+        else:
+            ranks[task_id] = 1 + max(compute_rank(pred) for pred in tasks[task_id]['predecessors'])
+        return ranks[task_id]
+    
+    # Calculer les rangs pour toutes les tâches
+    for task_id in tasks:
+        compute_rank(task_id)
+    
+    return ranks
 
+def find_all_paths(tasks, slack, start_task, end_task):
+    def dfs(current_task, path):
+        # Add current task to the path
+        path.append(current_task)
 
-def find_critical_path(slack):
-    # Les tâches avec une marge nulle sont sur le chemin critique
-    critical_path = [task for task, sl in slack.items() if sl == 0]
-    return critical_path
+        # If the end task is reached, save the path
+        if current_task == end_task:
+            critical_paths.append(list(path))
+        else:
+            # Explore successors with zero slack
+            for successor in tasks:
+                if current_task in tasks[successor]['predecessors'] and slack[successor] == 0:
+                    dfs(successor, path)
 
+        # Backtrack
+        path.pop()
 
-def display_critical_path(tasks, critical_path):
-    print("\n* Chemin(s) critique(s):")
-    # Créer une chaîne de tâches dans l'ordre du chemin critique
-    path_sequence = " -> ".join(f"Tâche {task}" for task in critical_path)
-    print(path_sequence)
+    # List to store all critical paths
+    critical_paths = []
+
+    # Start DFS from the starting task
+    dfs(start_task, [])
+
+    return critical_paths
+
+def find_critical_path(tasks, paths):
+    path_durations_table = []
+    for path in paths:
+        path_durations = 0
+        for task in path:
+            path_durations += tasks[task]['duration']
+        path_durations_table.append(path_durations)
+
+    critical_paths = []       
+    for i,path in enumerate(path_durations_table):
+        if path == max(path_durations_table):
+            critical_paths.append(paths[i])
+
+    return critical_paths
+    
+
+            

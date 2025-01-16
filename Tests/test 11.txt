@@ -21,17 +21,17 @@
 
 * Représentation du Graphe (Matrice) :
 
-    0   0   1   2   3   4   5   6   7   8   9
-0   *   *   0   *   *   *   *   *   *   *   *
-1   *   *   *   1   *   1   1   *   *   *   *
-2   *   *   *   *   1   *   *   *   *   1   *
-3   *   *   *   *   *   *   *   *   4   *   *
-4   *   *   *   2   *   *   *   2   *   2   *
-5   *   *   *   *   *   5   *   5   5   *   *
-6   *   *   *   *   *   *   *   *   *   6   *
-7   *   *   *   *   *   *   *   *   *   3   *
-8   *   *   *   *   *   *   *   *   *   *   0
-9   *   *   *   *   *   *   *   *   *   *   *
+     0   1   2   3   4   5   6   7   8   9
+0    *   0   *   *   *   *   *   *   *   *
+1    *   *   1   *   1   1   *   *   *   *
+2    *   *   *   1   *   *   *   *   1   *
+3    *   *   *   *   *   *   *   4   *   *
+4    *   *   2   *   *   *   2   *   2   *
+5    *   *   *   *   5   *   5   5   *   *
+6    *   *   *   *   *   *   *   *   6   *
+7    *   *   *   *   *   *   *   *   3   *
+8    *   *   *   *   *   *   *   *   *   0
+9    *   *   *   *   *   *   *   *   *   *
 
 
 Il y a un seul point d’entrée, 0
@@ -87,31 +87,31 @@ Sommets restant : Aucun
 Graphe d'ordonnancement valide. Poursuite des calculs...
 
 
-Temps au plus tôt (EST) et au plus tard (EFT) :
-Tâche 0 : EST = 0, EFT = 0
-Tâche 1 : EST = 0, EFT = 1
-Tâche 2 : EST = 8, EFT = 9
-Tâche 3 : EST = 9, EFT = 13
-Tâche 4 : EST = 6, EFT = 8
-Tâche 5 : EST = 1, EFT = 6
-Tâche 6 : EST = 8, EFT = 14
-Tâche 7 : EST = 13, EFT = 16
-Tâche 8 : EST = 16, EFT = 16
-Tâche 9 : EST = 16, EFT = 16
+* Rangs :
+Tâche 0 : rang = 0
+Tâche 1 : rang = 1
+Tâche 2 : rang = 4
+Tâche 3 : rang = 5
+Tâche 4 : rang = 3
+Tâche 5 : rang = 2
+Tâche 6 : rang = 4
+Tâche 7 : rang = 6
+Tâche 8 : rang = 7
+Tâche 9 : rang = 8
 
-Temps au plus tard (LST) et au plus tard (LFT) :
-Tâche 0 : LST = 0, LFT = 0
-Tâche 1 : LST = 0, LFT = 1
-Tâche 2 : LST = 8, LFT = 9
-Tâche 3 : LST = 9, LFT = 13
-Tâche 4 : LST = 6, LFT = 8
-Tâche 5 : LST = 1, LFT = 6
-Tâche 6 : LST = 10, LFT = 16
-Tâche 7 : LST = 13, LFT = 16
-Tâche 8 : LST = 16, LFT = 16
-Tâche 9 : LST = 16, LFT = 16
+* Temps au plus tôt (EST) et au plus tard (LST) :
+Tâche 0 : EST = 0, LST = 0
+Tâche 1 : EST = 0, LST = 0
+Tâche 2 : EST = 8, LST = 8
+Tâche 3 : EST = 9, LST = 9
+Tâche 4 : EST = 6, LST = 6
+Tâche 5 : EST = 1, LST = 1
+Tâche 6 : EST = 8, LST = 10
+Tâche 7 : EST = 13, LST = 13
+Tâche 8 : EST = 16, LST = 16
+Tâche 9 : EST = 16, LST = 16
 
-Marges (Slack) :
+* Marges :
 Tâche 0 : Marge = 0
 Tâche 1 : Marge = 0
 Tâche 2 : Marge = 0
@@ -122,9 +122,8 @@ Tâche 6 : Marge = 2
 Tâche 7 : Marge = 0
 Tâche 8 : Marge = 0
 Tâche 9 : Marge = 0
-
-* Chemin(s) critique(s):
-Tâche 0 -> Tâche 1 -> Tâche 2 -> Tâche 3 -> Tâche 4 -> Tâche 5 -> Tâche 7 -> Tâche 8 -> Tâche 9
+Chemins critiques:
+0 -> 1 -> 5 -> 4 -> 2 -> 3 -> 7 -> 8 -> 9 
 
 ----- Fin de l'ordonnancement pour ce tableau -----
 

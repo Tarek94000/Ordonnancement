@@ -28,21 +28,21 @@
 
 * Représentation du Graphe (Matrice) :
 
-    0   0   1   2   3   4   5   6   7   8   9  10  11  12  13
-0   *   *   0   0   *   *   *   *   *   *   *   *   *   *   *
-1   *   *   *   *  10  10   *   *   *   *   *   *   *  10   *
-2   *   *   *   *  10  10   *   *   *   *   *   *   *   *   *
-3   *   *   *   *   *   *   *   *   *   *   9   9   *   *   *
-4   *   *   *   *   *   *   5   *   5   *   5   *   *   *   *
-5   *   *   *   *   *   *   *   4   *   4   *   *   *   *   *
-6   *   *   *   *   *   *   *   *   *   *   *   *   2   2   *
-7   *   *   *   *   *   *   *   *   *   2   *   *   *   *   *
-8   *   *   *   *   *   *   *   *   *   *   *   *   4   *   *
-9   *   *   *   *   *   *   *   *   *   8   *   8   *   *   *
-10  *   *   *   *   *   *   *   *   *   *   *   *  12   *   *
-11  *   *   *   *   *   *   *   *   *   *   *   *   *   *   2
-12  *   *   *   *   *   *   *   *   *   *   *   *   *   *  20
-13  *   *   *   *   *   *   *   *   *   *   *   *   *   *   *
+     0   1   2   3   4   5   6   7   8   9  10  11  12  13
+0    *   0   0   *   *   *   *   *   *   *   *   *   *   *
+1    *   *   *  10  10   *   *   *   *   *   *   *  10   *
+2    *   *   *  10  10   *   *   *   *   *   *   *   *   *
+3    *   *   *   *   *   *   *   *   *   9   9   *   *   *
+4    *   *   *   *   *   5   *   5   *   5   *   *   *   *
+5    *   *   *   *   *   *   4   *   4   *   *   *   *   *
+6    *   *   *   *   *   *   *   *   *   *   *   2   2   *
+7    *   *   *   *   *   *   *   *   2   *   *   *   *   *
+8    *   *   *   *   *   *   *   *   *   *   *   4   *   *
+9    *   *   *   *   *   *   *   *   8   *   8   *   *   *
+10   *   *   *   *   *   *   *   *   *   *   *  12   *   *
+11   *   *   *   *   *   *   *   *   *   *   *   *   *   2
+12   *   *   *   *   *   *   *   *   *   *   *   *   *  20
+13   *   *   *   *   *   *   *   *   *   *   *   *   *   *
 
 
 Il y a un seul point d’entrée, 0
@@ -114,39 +114,39 @@ Sommets restant : Aucun
 Graphe d'ordonnancement valide. Poursuite des calculs...
 
 
-Temps au plus tôt (EST) et au plus tard (EFT) :
-Tâche 0 : EST = 0, EFT = 0
-Tâche 1 : EST = 0, EFT = 10
-Tâche 2 : EST = 0, EFT = 10
-Tâche 3 : EST = 10, EFT = 19
-Tâche 4 : EST = 10, EFT = 15
-Tâche 5 : EST = 15, EFT = 19
-Tâche 6 : EST = 19, EFT = 21
-Tâche 7 : EST = 15, EFT = 17
-Tâche 8 : EST = 27, EFT = 31
-Tâche 9 : EST = 19, EFT = 27
-Tâche 10 : EST = 27, EFT = 39
-Tâche 11 : EST = 39, EFT = 41
-Tâche 12 : EST = 21, EFT = 41
-Tâche 13 : EST = 41, EFT = 41
+* Rangs :
+Tâche 0 : rang = 0
+Tâche 1 : rang = 1
+Tâche 2 : rang = 1
+Tâche 3 : rang = 2
+Tâche 4 : rang = 2
+Tâche 5 : rang = 3
+Tâche 6 : rang = 4
+Tâche 7 : rang = 3
+Tâche 8 : rang = 4
+Tâche 9 : rang = 3
+Tâche 10 : rang = 4
+Tâche 11 : rang = 5
+Tâche 12 : rang = 5
+Tâche 13 : rang = 6
 
-Temps au plus tard (LST) et au plus tard (LFT) :
-Tâche 0 : LST = 0, LFT = 0
-Tâche 1 : LST = 0, LFT = 10
-Tâche 2 : LST = 0, LFT = 10
-Tâche 3 : LST = 10, LFT = 19
-Tâche 4 : LST = 10, LFT = 15
-Tâche 5 : LST = 15, LFT = 19
-Tâche 6 : LST = 19, LFT = 21
-Tâche 7 : LST = 33, LFT = 35
-Tâche 8 : LST = 35, LFT = 39
-Tâche 9 : LST = 19, LFT = 27
-Tâche 10 : LST = 27, LFT = 39
-Tâche 11 : LST = 39, LFT = 41
-Tâche 12 : LST = 21, LFT = 41
-Tâche 13 : LST = 41, LFT = 41
+* Temps au plus tôt (EST) et au plus tard (LST) :
+Tâche 0 : EST = 0, LST = 0
+Tâche 1 : EST = 0, LST = 0
+Tâche 2 : EST = 0, LST = 0
+Tâche 3 : EST = 10, LST = 10
+Tâche 4 : EST = 10, LST = 10
+Tâche 5 : EST = 15, LST = 15
+Tâche 6 : EST = 19, LST = 19
+Tâche 7 : EST = 15, LST = 33
+Tâche 8 : EST = 27, LST = 35
+Tâche 9 : EST = 19, LST = 19
+Tâche 10 : EST = 27, LST = 27
+Tâche 11 : EST = 39, LST = 39
+Tâche 12 : EST = 21, LST = 21
+Tâche 13 : EST = 41, LST = 41
 
-Marges (Slack) :
+* Marges :
 Tâche 0 : Marge = 0
 Tâche 1 : Marge = 0
 Tâche 2 : Marge = 0
@@ -161,9 +161,11 @@ Tâche 10 : Marge = 0
 Tâche 11 : Marge = 0
 Tâche 12 : Marge = 0
 Tâche 13 : Marge = 0
-
-* Chemin(s) critique(s):
-Tâche 0 -> Tâche 1 -> Tâche 2 -> Tâche 3 -> Tâche 4 -> Tâche 5 -> Tâche 6 -> Tâche 9 -> Tâche 10 -> Tâche 11 -> Tâche 12 -> Tâche 13
+Chemins critiques:
+0 -> 1 -> 3 -> 9 -> 10 -> 11 -> 13 
+0 -> 1 -> 4 -> 5 -> 6 -> 12 -> 13 
+0 -> 2 -> 3 -> 9 -> 10 -> 11 -> 13 
+0 -> 2 -> 4 -> 5 -> 6 -> 12 -> 13 
 
 ----- Fin de l'ordonnancement pour ce tableau -----
 

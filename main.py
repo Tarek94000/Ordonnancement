@@ -11,11 +11,8 @@ def main():
         arcs_number = 0
         top_order = []
         earliest_finish = {}
-        earliest_finish = {}
         latest_start = {}
-        latest_finish = {}
-        slack = {}
-        critical_path = []     
+        slack = {} 
         
         user_input = input("Entrez le numero du fichier de contraintes (entre 1 et 14) : ")
         
@@ -37,43 +34,57 @@ def main():
 
         # Étape 1 : Lire le tableau des contraintes à partir du fichier
         tasks, arcs_number = read_automata(file_name)
+        print("\n\n")
 
         # Étape 2 : Créer et afficher la matrice du graphe
         display_automata(tasks, arcs_number)
-        print("\nReprésentation du Graphe (Matrice) :\n")
+        print("\n* Représentation du Graphe (Matrice) :\n")
         create_matrix(tasks)
 
         # Étape 3 : Vérifier si le graphe est un graphe d'ordonnancement valide (en utilisant verifiying_ord_graph)
         top_order, is_acyclic = verifiying_ord_graph(tasks)
 
         if not is_acyclic:
-            print("Veuillez choisir un autre tableau.")
+            print("Veuillez choisir un autre tableau.\n")
             continue
 
+
+        ####### Graphe d'ordonnancement valide
+
         print("\nGraphe d'ordonnancement valide. Poursuite des calculs...\n")
+        ranks = calculate_task_ranks(tasks)
+        print("\n* Rangs :")
+        for task in tasks:
+            print(f"Tâche {task} : rang = {ranks[task]}")
 
         # Étape 4 : Calculer les temps au plus tôt et au plus tard (passage avant et arrière)
         earliest_start, earliest_finish = calculate_earliest_times(tasks, top_order)
-        latest_start, latest_finish = calculate_latest_times(tasks, top_order, earliest_finish)
+        latest_start= calculate_latest_times(tasks, top_order, earliest_finish)
 
         # Afficher les résultats
-        print("\nTemps au plus tôt (EST) et au plus tard (EFT) :")
+        print("\n* Temps au plus tôt (EST) et au plus tard (LST) :")
         for task in tasks:
-            print(f"Tâche {task} : EST = {earliest_start[task]}, EFT = {earliest_finish[task]}")
-        
-        print("\nTemps au plus tard (LST) et au plus tard (LFT) :")
-        for task in tasks:
-            print(f"Tâche {task} : LST = {latest_start[task]}, LFT = {latest_finish[task]}")
+            print(f"Tâche {task} : EST = {earliest_start[task]}, LST = {latest_start[task]}")
 
         # Étape 5 : Calculer et afficher les marges (slack)
         slack = calculate_slack(earliest_start, latest_start)
-        print("\nMarges (Slack) :")
+        print("\n* Marges :")
         for task in tasks:
             print(f"Tâche {task} : Marge = {slack[task]}")
+        
+        paths = find_all_paths(tasks, slack, 0, len(tasks) - 1)
+        critical_paths = find_critical_path(tasks, paths)
+        
+        print("\n* Chemins critiques:")
+        for path in critical_paths:
+            for steps in path:
+                print(steps, end=" ")
+                if steps != path[-1]:
+                    print("->", end=" ")
+            print()
 
-        # Étape 6 : Calculer et afficher le(s) chemin(s) critique(s)
-        critical_path = find_critical_path(slack)
-        display_critical_path(tasks, critical_path)
+        
+
 
         print("\n----- Fin de l'ordonnancement pour ce tableau -----\n")
 
