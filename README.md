@@ -15,8 +15,8 @@ Le projet *Ordonnancement* vise à modéliser et optimiser l'ordonnancement de t
 ## Installation
 1. Cloner le dépôt :
    ```sh
-   git clone https://github.com/tarek94000/Ordonnancement-main.git
-   cd Ordonnancement-main
+   git clone https://github.com/tarek94000/Ordonnancement.git
+   cd Ordonnancement
    ```
 2. Installer les dépendances :
    ```sh
