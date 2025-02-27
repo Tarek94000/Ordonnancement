@@ -1,7 +1,7 @@
 # Ordonnancement de Tâches
 
 ## Description
-Le projet *Ordonnancement-main* vise à modéliser et optimiser l'ordonnancement de tâches en utilisant des algorithmes avancés. Il permet de gérer des tâches avec des dépendances et de déterminer les temps critiques du projet.
+Le projet *Ordonnancement* vise à modéliser et optimiser l'ordonnancement de tâches en utilisant des algorithmes avancés. Il permet de gérer des tâches avec des dépendances et de déterminer les temps critiques du projet.
 
 ## Fonctionnalités
 - **condition.py** : Gestion des contraintes et dépendances entre tâches.
